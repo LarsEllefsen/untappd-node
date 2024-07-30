@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untappd Beer Search | Untappd</title>
+<meta property="og:site_name" content="Untappd" />
+
+<meta name="description" content="Looking for something on Untappd? Search to find any beer, brewery or venue on Untappd." />
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+<meta name="referrer" content="origin-when-crossorigin">
+
+<meta name="author" content="The Untappd Team" />
+<meta name="Copyright" content="Copyright Untappd 2024. All Rights Reserved." />
+<meta name="DC.title" content="Untappd" />
+<meta name="DC.subject" content="Looking for something on Untappd? Search to find any beer, brewery or venue on Untappd." />
+<meta name="DC.creator" content="The Untappd Team" />
+<meta name="google-site-verification" content="EnR7QavTgiLCzZCCOv_OARCHsHhFwkwnJdG0Sti9Amg" />
+<meta name="bitly-verification" content="b3080898518a" />
+
+<link rel="apple-touch-icon" sizes="144x144" href="https://untappd.com/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="https://untappd.com/assets/favicon-32x32-v2.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://untappd.com/assets/favicon-16x16-v2.png" sizes="16x16">
+<link rel="manifest" href="https://untappd.com/assets/manifest.json">
+<link rel="mask-icon" href="https://untappd.com/assets/safari-pinned-tab.svg" color="#5bbad5">
+<link id="canonical" rel="canonical" href="https://untappd.com/search"> <link rel="stylesheet" href="https://untappd.com/assets/css/master.min.css?v=4.5.6" />
+<link rel="stylesheet" href="https://untappd.com/assets/v3/css/style.css?v=4.5.6" />
+<link rel="stylesheet" href="https://untappd.com/assets/design-system/css/styles.css?v=4.5.6" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+<script src="https://untappd.com/assets/v3/js/common/min/site_common_min.js?v=2.8.7"></script>
+<!--[if lte IE 7]><script src="https://untappd.com/assets/js/ie6.js?v=2.8.7"></script><![endif]-->
+<link rel="stylesheet" href="https://untappd.com/assets/css/facybox.min.css?v=4.5.6" />
+<link rel="stylesheet" href="https://untappd.com/assets/css/jquery.notifyBar.min.css?v=4.5.6" />
+<link rel="stylesheet" href="https://untappd.com/assets/css/tipsy.min.css?v=4.5.6" type="text/css" media="screen" title="no title" charset="utf-8">
+<script type="text/javascript" language="Javascript">
+			$(document).ready(function(){
+				$(".tip").tipsy({fade: true});
+				$('.badge_hint').tipsy({gravity: 's', fade: true});
+				$('.disabled').tipsy({gravity: 'n', fade: true});
+
+				refreshTime(".timezoner", "D MMM YY", true);
+
+				$(".tab").click(function(){
+					$(".tab-area li").removeClass('active');
+					$(this).parent().addClass('active');
+					$(".list").hide();
+					$($(this).attr("href")).show();
+					return false;
+				});
+			});
+
+			</script>
+
+<script type="text/javascript" language="Javascript">
+	onChangeInterval = "";
+	if(!(window.console && console.log)) {
+	  console = {
+	    log: function(){},
+	    debug: function(){},
+	    info: function(){},
+	    warn: function(){},
+	    error: function(){}
+	  };
+	}
+	</script>
+
+<script type="text/javascript" src="https://untappd.com/assets/libs/js/algoliasearch.min.js?v2.8.7"></script>
+<script type="text/javascript" src="https://untappd.com/assets/libs/js/autocomplete.min.js?v2.8.7"></script>
+<script type="text/javascript" src="https://untappd.com/assets/libs/js/lodash.min.js?v2.8.7"></script>
+<script type="text/javascript" src="https://untappd.com/assets/js/global/autosearch_tracking.min.js?v2.8.7"></script>
+<script>
+     !function(e,a,t,n,s,i,c){e.AlgoliaAnalyticsObject=s,e.aa=e.aa||function(){(e.aa.queue=e.aa.queue||[]).push(arguments)},i=a.createElement(t),c=a.getElementsByTagName(t)[0],i.async=1,i.src="https://cdn.jsdelivr.net/npm/search-insights@0.0.14",c.parentNode.insertBefore(i,c)}(window,document,"script",0,"aa");
+
+    // Initialize library
+    aa('init', {
+      applicationID: '9WBO4RQ3HO',
+      apiKey: '1d347324d67ec472bb7132c66aead485',
+    })
+  </script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-N4DVXTR');</script>
+<script type="text/javascript">
+		var clevertap = {event:[], profile:[], account:[], onUserLogin:[], region: 'us1', notifications:[], privacy:[]};
+	clevertap.account.push({"id": "865-K5R-W96Z"});
+	clevertap.privacy.push({optOut: false}); //set the flag to true, if the user of the device opts out of sharing their data
+	clevertap.privacy.push({useIP: true}); //set the flag to true, if the user agrees to share their IP data
+	(function () {
+			var wzrk = document.createElement('script');
+			wzrk.type = 'text/javascript';
+			wzrk.async = true;
+			wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.cloudfront.net' : 'http://static.clevertap.com') + '/js/clevertap.min.js';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(wzrk, s);
+	})();
+	</script>
+</head>
+<style type="text/css">
+	.hidden {display: none;}
+	.main {
+       margin-top: 0px !important;
+   }
+</style>
+<script src="https://unpkg.com/feather-icons"></script>
+<body onunload>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N4DVXTR " height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('a[data-href=":logout"]').on('click', function(event) {
+            clevertap.event.push("logout");
+        });
+        $('a[data-href=":external/help"]').on('click', function(event) {
+            clevertap.event.push("pageview_help");
+        });
+        $('a[data-href=":store"]').on('click', function(event) {
+            clevertap.event.push("pageview_store");
+        });
+        $('a[href="/admin"]').on('click', function(event) {
+          clevertap.event.push("pageview_admin");
+        });
+    });
+</script>
+<div id="mobile_nav_user">
+</div>
+<div id="mobile_nav_site">
+<form class="search_box" method="get" action="/search">
+<input type="text" class="track-focus search-input-desktop" autocomplete="off" data-track="desktop_search" placeholder="Find a beer, brewery or bar..." name="q" aria-label="Find a beer, brewery or bar search" />
+<input type="submit" value="Submit the form!" style="position: absolute; top: 0; left: 0; z-index: 0; width: 1px; height: 1px; visibility: hidden;" />
+<div class="autocomplete">
+</div>
+</form>
+<ul>
+<li><a class="track-click" data-track="mobile_menu" data-href=":blog" href="/blog">Blog</a></li>
+<li><a class="track-click" data-track="mobile_menu" data-href=":beer/top_rated" href="/beer/top_rated">Top Rated</a></li>
+<li><a class="track-click" data-track="mobile_menu" data-href=":supporter" href="/supporter">Insiders</a></li>
+<li><a class="track-click" data-track="mobile_menu" data-href=":external/help" target="_blank" href="http://help.untappd.com">Help</a></li>
+<li><a class="track-click" data-track="mobile_menu" data-href=":store" target="_blank" href="https://store.untappd.com">Store</a></li>
+<li><a class="track-click" data-track="mobile_menu" data-href=":sidebar/login" href="/login">Login</a></li>
+<li><a class="track-click" data-track="mobile_menu" data-href=":sidebar/create" href="/create?source=mobilemenu">Sign Up</a></li>
+</ul>
+</div>
+<header>
+<div class="inner">
+<a class="track-click logo" data-track="desktop_header" data-href=":root" href="/">
+<img src="https://untappd.com/assets/design-system/ut-brand-dark.svg" class alt="Untappd" />
+</a>
+<div class="get_user_desktop">
+<a class="sign_in track-click" data-track="mobile_header" data-href=":login" href="/login?go_to=https://untappd.com/search">Sign In</a>
+<a href="/create" class="join track_click" data-track="mobile_header" data-href=":create">Join Now</a>
+</div>
+<div onclick="trackMobileEvent('menu');" class="mobile_menu_btn">Menu</div>
+<div id="nav_site">
+<ul>
+<li><a class="track-click" data-track="desktop_menu" data-href=":blog" href="/blog">Blog</a></li>
+<li><a class="track-click" data-track="desktop_menu" data-href=":beer/top_rated" href="/beer/top_rated">Top Rated</a></li>
+<li><a class="track-click" data-track="desktop_menu" data-href=":supporter" href="/supporter">Insiders</a></li>
+<li><a class="track-click" data-track="desktop_menu" data-href=":external/help" target="_blank" href="http://help.untappd.com">Help</a></li>
+<li><a class="track-click" data-track="desktop_menu" data-href=":store" target="_blank" href="https://store.untappd.com">Store</a></li>
+</ul>
+<form class="search_box" method="get" action="/search">
+<input type="text" class="track-focus search-input-desktop" autocomplete="off" data-track="desktop_search" placeholder="Find a beer, brewery or bar..." name="q" aria-label="Find a beer, brewery or bar search" />
+<input type="submit" value="Submit the form!" style="position: absolute; top: 0; left: 0; z-index: 0; width: 1px; height: 1px; visibility: hidden;" />
+<div class="autocomplete">
+</div>
+</form>
+</div>
+</div>
+</header>
+<style type="text/css">
+    .ac-selected {
+        background-color: #f8f8f8;
+    }
+</style>
+<div class="nav_open_overlay"></div>
+<div id="slide">
+<script>
+$(document).ready(() => {
+	$(".hide-notice-banner").on("click", function(e) {
+		e.preventDefault();
+		$(this).parent().parent().slideUp();
+		$.post(`/account/hide_notice_wildcard`, {cookie: $(this).attr('data-cookie-name')}, (data) => {
+			console.log(data);
+		}).fail((err) => {
+			console.error(err);
+		})
+	})
+
+	$(".hide-notice-simple").on("click", function(e) {
+		e.preventDefault();
+		$(this).parent().parent().slideUp();
+	})
+
+	feather.replace()
+})
+</script>
+<div class="leaderboard-ad">
+<div class="AdvallyTag" data-slot="/21791133974/untappd/Top_Banner" id="div-untappd-header" data-autosize="leaderboard"></div>
+</div>
+<div class="cont search-page">
+<div class="main">
+<div class="box">
+<div class="results content">
+<div class="search">
+<form method="/search" method="get">
+<input type="text" id="search-term" name="q" aria-label="Beer search" value="3 fonteinen"><span class="button yellow">Search<input type="submit" aria-label="search button"></span>
+<input type="hidden" id="page-type" name="type" value="beer" />
+<input type="hidden" id="sort-type" name="sort" value="all" />
+</form>
+</div>
+<div class="filter">
+<a href="#" data-filter="beer" class="active section-toggle track-click" data-track="search" data-type="beer" data-href=":beer_toggle">
+Beer
+</a><a data-filter="brewery" class="section-toggle track-click" data-track="search" data-type="beer" data-href=":brewery_toggle" href="#">
+Brewery
+</a><a data-filter="venues" class="section-toggle track-click" data-track="search" data-type="beer" data-href=":venue_togle" href="#">
+Venue
+</a>
+</div>
+<div class="result-list beer-list">
+<div class="results-list-top">
+<p class="total"><strong>831 beer</strong> results for <strong>"3 fonteinen"</strong></p>
+<div class="sort">
+<p>
+Sort by:
+<select id="sort_picker" data-type="beer" aria-label="Sort by selection">
+<option value="all" SELECTED="TRUE">Most Popular</option>
+<option value="beer_name_asc">Beer Name (Asc)</option>
+<option value="beer_name_desc">Beer Name (Desc)</option>
+<option value="brewery">Brewery Name</option>
+<option value="highest_abv">Highest ABV</option>
+<option value="lowest_abv">Lowest ABV</option>
+</select>
+</p>
+</div>
+</div>
+<div class="unexpected-class-name">
+<div class="beer-item ">
+<a class="label" href="/beer/4009">
+<img src="https://assets.untappd.com/site/beer_logos/beer-4009_7dc60_sm.jpeg" alt="3 Fonteinen Oude Geuze label">
+</a><div class="beer-details">
+<p class="name"><a href="/b/brouwerij-3-fonteinen-3-fonteinen-oude-geuze/4009">3 Fonteinen Oude Geuze</a></p>
+<p class="brewery"><a href="/Brouwerij3Fonteinen">Brouwerij 3 Fonteinen</a></p>
+<p class="style">Lambic - Gueuze</p>
+</div>
+<div class="details beer">
+<p class="abv">
+6% ABV
+</p><p class="ibu">
+N/A IBU </p>
+<div class="rating">
+<div class="caps" data-rating="4.062">
+<div class="cap cap-100"></div>
+<div class="cap cap-100"></div>
+<div class="cap cap-100"></div>
+<div class="cap cap-100"></div>
+<div class="cap cap-10"></div>
+</div> <span class="num">(4.062)</span>
+</div>
+</div>
+</div>
+<div class="beer-item ">
+<a class="label" href="/beer/14597">
+<img src="https://assets.untappd.com/site/beer_logos/beer-14597_f06a5_sm.jpeg" alt="3 Fonteinen Oude Kriek label">
+</a><div class="beer-details">
+<p class="name"><a href="/b/brouwerij-3-fonteinen-3-fonteinen-oude-kriek/14597">3 Fonteinen Oude Kriek</a></p>
+<p class="brewery"><a href="/Brouwerij3Fonteinen">Brouwerij 3 Fonteinen</a></p>
+<p class="style">Lambic - Kriek</p>
+</div>
+<div class="details beer">
+<p class="abv">
+6% ABV
+</p><p class="ibu">
+N/A IBU </p>
+<div class="rating">
+<div class="caps" data-rating="4.185">
+<div class="cap cap-100"></div>
+<div class="cap cap-100"></div>
+<div class="cap cap-100"></div>
+<div class="cap cap-100"></div>
+<div class="cap cap-20"></div>
+</div> <span class="num">(4.185)</span>
+</div>
+</div>
+</div>
+<div class="beer-item ">
+<a class="label" href="/beer/1594814">
+<img src="https://assets.untappd.com/site/beer_logos/beer-2947626_09542_sm.jpeg" alt="3 Fonteinen Oude Geuze Cuvée Armand & Gaston label">
+</a><div class="beer-details">
+<p class="name"><a href="/b/brouwerij-3-fonteinen-3-fonteinen-oude-geuze-cuvee-armand-and-gaston/1594814">3 Fonteinen Oude Geuze Cuvée Armand & Gaston</a></p>
+<p class="brewery"><a href="/Brouwerij3Fonteinen">Brouwerij 3 Fonteinen</a></p>
+<p class="style">Lambic - Gueuze</p>
+</div>
+<div class="details beer">
+<p class="abv">
+5.5% ABV
+</p><p class="ibu">
+N/A IBU </p>
+<div class="rating">
+<div class="caps" data-rating="4.32">
+<div class="cap cap-100"></div>
+<div class="cap cap-100"></div>
+<div class="cap cap-100"></div>
+<div class="cap cap-100"></div>
+<div class="cap cap-30"></div>
+</div> <span class="num">(4.32)</span>
+</div>
+</div>
+</div>
+<div class="beer-item ">
+<a class="label" href="/beer/347907">
+<img src="https://assets.untappd.com/site/beer_logos/beer-347907_0442c_sm.jpeg" alt="3 Fonteinen Intens Rood (Intense Red) label">
+</a><div class="beer-details">
+<p class="name"><a href="/b/brouwerij-3-fonteinen-3-fonteinen-intens-rood-intense-red/347907">3 Fonteinen Intens Rood (Intense Red)</a></p>
+<p class="brewery"><a href="/Brouwerij3Fonteinen">Brouwerij 3 Fonteinen</a></p>
+<p class="style">Lambic - Kriek</p>
+</div>
+<div class="details beer">
+<p class="abv">
+6% ABV
+</p><p class="ibu">
+N/A IBU </p>
+<div class="rating">
+<div class="caps" data-rating="4.203">
+<div class="cap cap-100"></div>
+<div class="cap cap-100"></div>
+<div class="cap cap-100"></div>
+<div class="cap cap-100"></div>
+<div class="cap cap-20"></div>
+</div> <span class="num">(4.203)</span>
+</div>
+</div>
+</div>
+<div class="beer-item ">
+<a class="label" href="/beer/144709">
+<img src="https://assets.untappd.com/site/beer_logos/beer-144709_999e5_sm.jpeg" alt="3 Fonteinen Oude Geuze Golden Blend label">
+</a><div class="beer-details">
+<p class="name"><a href="/b/brouwerij-3-fonteinen-3-fonteinen-oude-geuze-golden-blend/144709">3 Fonteinen Oude Geuze Golden Blend</a></p>
+<p class="brewery"><a href="/Brouwerij3Fonteinen">Brouwerij 3 Fonteinen</a></p>
+<p class="style">Lambic - Gueuze</p>
+</div>
+<div class="details beer">
+<p class="abv">
+7.5% ABV
+</p><p class="ibu">
+N/A IBU </p>
+<div class="rating">
+<div class="caps" data-rating="4.364">
+<div class="cap cap-100"></div>
+<div class="cap cap-100"></div>
+<div class="cap cap-100"></div>
+<div class="cap cap-100"></div>
+<div class="cap cap-40"></div>
+</div> <span class="num">(4.364)</span>
+</div>
+</div>
+</div>
+</div>
+<div class="feed-block search-block">
+<div class="feed-block-login">
+<p><strong>Please sign in to view more.</strong></p>
+<span>If you don’t have an account, <a href="/create?source=search">you can create one here</a>.</span>
+<a href="/login?go_to=https%3A%2F%2Funtappd.com%2Fsearch%3Fq%3D3+fonteinen%26type%3Dbeer" class="yellow button">Sign In</a>
+</div>
+<div class="feed-block-fade"></div>
+<div class="feed-block-item">
+<div class="feed-block-avatar"></div>
+<div class="feed-block-content">
+<p></p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="feed-block-item">
+<div class="feed-block-avatar"></div>
+<div class="feed-block-content">
+<p></p>
+<p></p>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sidebar">
+<div class="box">
+<div class="AdvallyTag" data-slot="/21791133974/untappd/Sidebar_Banner1" id="div-untappd-sidebar1" data-size="300x250"></div>
+</div>
+<div class="box">
+<div class="content">
+<h3>Global Top Beers</h3> <div class="item">
+<a href="/b/guinness-guinness-draught/4473" class="track-click" data-track="sidebar" data-href=":beer/toplist">
+<p class="logo">
+<img src="https://assets.untappd.com/site/beer_logos/beer-4473_1cbe8_sm.jpeg" alt="Guinness Draught label">
+</p><p class="text">
+<span class="name">Guinness Draught</span>
+<span class="brewery">Guinness</span> </p>
+</a>
+</div>
+<div class="item">
+<a href="/b/lagunitas-brewing-company-ipa/4509" class="track-click" data-track="sidebar" data-href=":beer/toplist">
+<p class="logo">
+<img src="https://assets.untappd.com/site/beer_logos/beer-4509_f8e8d_sm.jpeg" alt="IPA label">
+</p><p class="text">
+<span class="name">IPA</span>
+<span class="brewery">Lagunitas Brewing Company</span> </p>
+</a>
+</div>
+<div class="item">
+<a href="/b/birra-moretti-birra-moretti-l-autentica-ricetta-originale/6347" class="track-click" data-track="sidebar" data-href=":beer/toplist">
+<p class="logo">
+<img src="https://assets.untappd.com/site/beer_logos/beer-6347_a13ce_sm.jpeg" alt="Birra Moretti L'Autentica / Ricetta Originale label">
+</p><p class="text">
+<span class="name">Birra Moretti L'Autentica / Ricetta Originale</span>
+<span class="brewery">Birra Moretti</span> </p>
+</a>
+</div>
+<div class="item">
+<a href="/b/grupo-modelo-corona-extra/5848" class="track-click" data-track="sidebar" data-href=":beer/toplist">
+<p class="logo">
+<img src="https://assets.untappd.com/site/beer_logos/beer-5848_e34c0_sm.jpeg" alt="Corona Extra label">
+</p><p class="text">
+<span class="name">Corona Extra</span>
+<span class="brewery">Grupo Modelo</span> </p>
+</a>
+</div>
+<div class="item">
+<a href="/b/heineken-heineken/5860" class="track-click" data-track="sidebar" data-href=":beer/toplist">
+<p class="logo">
+<img src="https://assets.untappd.com/site/beer_logos/beer-5860_a68ef_sm.jpeg" alt="Heineken label">
+</p><p class="text">
+<span class="name">Heineken</span>
+<span class="brewery">Heineken</span> </p>
+</a>
+</div>
+<div class="item">
+<a href="/b/paulaner-brauerei-paulaner-hefe-weissbier-hefe-weizen-weissbier/15677" class="track-click" data-track="sidebar" data-href=":beer/toplist">
+<p class="logo">
+<img src="https://assets.untappd.com/site/beer_logos/beer-15677_23219_sm.jpeg" alt="Paulaner Hefe-Weißbier / Hefe-Weizen / Weissbier label">
+</p><p class="text">
+<span class="name">Paulaner Hefe-Weißbier / Hefe-Weizen / Weissbier</span>
+<span class="brewery">Paulaner Brauerei</span> </p>
+</a>
+</div>
+<div class="item">
+<a href="/b/stella-artois-stella-artois/4010" class="track-click" data-track="sidebar" data-href=":beer/toplist">
+<p class="logo">
+<img src="https://assets.untappd.com/site/beer_logos/beer-4010_5da67_sm.jpeg" alt="Stella Artois label">
+</p><p class="text">
+<span class="name">Stella Artois</span>
+<span class="brewery">Stella Artois</span> </p>
+</a>
+</div>
+<div class="item">
+<a href="/b/plzensky-prazdroj-pilsner-urquell/37936" class="track-click" data-track="sidebar" data-href=":beer/toplist">
+<p class="logo">
+<img src="https://assets.untappd.com/site/beer_logos/beer-37936_91585_sm.jpeg" alt="Pilsner Urquell label">
+</p><p class="text">
+<span class="name">Pilsner Urquell</span>
+<span class="brewery">Plzeňský Prazdroj</span> </p>
+</a>
+</div>
+<div class="item">
+<a href="/b/birra-peroni-nastro-azzurro/7427" class="track-click" data-track="sidebar" data-href=":beer/toplist">
+<p class="logo">
+<img src="https://assets.untappd.com/site/beer_logos/beer-7427_57d7c_sm.jpeg" alt="Nastro Azzurro label">
+</p><p class="text">
+<span class="name">Nastro Azzurro</span>
+<span class="brewery">Birra Peroni</span> </p>
+</a>
+</div>
+<div class="item">
+<a href="/b/abbaye-de-leffe-leffe-blonde-blond/5940" class="track-click" data-track="sidebar" data-href=":beer/toplist">
+<p class="logo">
+<img src="https://assets.untappd.com/site/beer_logos/beer-5940_9118b_sm.jpeg" alt="Leffe Blonde / Blond label">
+</p><p class="text">
+<span class="name">Leffe Blonde / Blond</span>
+<span class="brewery">Abbaye de Leffe</span> </p>
+</a>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="content">
+<h3>Trending Locations</h3> <div class="item">
+<a href="/v/at-home/9917985" class="track-click" data-track="sidebar" data-href=":venue/toplist">
+<p class="logo">
+<span>Verified</span> <img src="https://assets.untappd.com/venuelogos/venue_9917985_b3a5d245_bg_176.png?v=1" alt="Untappd at Home logo">
+</p><p class="text">
+<span class="name">Untappd at Home</span>
+<span class="location">United States</span> </p>
+</a>
+</div>
+<div class="item">
+<a href="/v/nationals-park/10414" class="track-click" data-track="sidebar" data-href=":venue/toplist">
+<p class="logo">
+<img src="https://ss3.4sqi.net/img/categories_v2/arts_entertainment/stadium_baseball_bg_512.png" alt="Nationals Park logo">
+</p><p class="text">
+<span class="name">Nationals Park</span>
+<span class="location">Washington, D.C. </span> </p>
+</a>
+</div>
+<div class="item">
+<a href="/v/fenway-park/38950" class="track-click" data-track="sidebar" data-href=":venue/toplist">
+<p class="logo">
+<img src="https://ss3.4sqi.net/img/categories_v2/arts_entertainment/stadium_baseball_bg_512.png" alt="Fenway Park logo">
+</p><p class="text">
+<span class="name">Fenway Park</span>
+<span class="location">Boston, MA </span> </p>
+</a>
+</div>
+<div class="item">
+<a href="/v/blossom-music-center/57898" class="track-click" data-track="sidebar" data-href=":venue/toplist">
+<p class="logo">
+<img src="https://ss3.4sqi.net/img/categories_v2/arts_entertainment/musicvenue_bg_512.png" alt="Blossom Music Center logo">
+</p><p class="text">
+<span class="name">Blossom Music Center</span>
+<span class="location">Cuyahoga Falls, OH </span> </p>
+</a>
+</div>
+<div class="item">
+<a href="/v/miller-park-american-family-field/36635" class="track-click" data-track="sidebar" data-href=":venue/toplist">
+<p class="logo">
+<img src="https://ss3.4sqi.net/img/categories_v2/arts_entertainment/stadium_baseball_bg_512.png" alt="Miller Park (American Family Field) logo">
+</p><p class="text">
+<span class="name">Miller Park (American Family Field)</span>
+<span class="location">Milwaukee, WI </span> </p>
+</a>
+</div>
+<div class="item">
+<a href="/v/minute-maid-park/38601" class="track-click" data-track="sidebar" data-href=":venue/toplist">
+<p class="logo">
+<img src="https://ss3.4sqi.net/img/categories_v2/arts_entertainment/stadium_baseball_bg_512.png" alt="Minute Maid Park logo">
+</p><p class="text">
+<span class="name">Minute Maid Park</span>
+<span class="location">Houston, TX </span> </p>
+</a>
+</div>
+<div class="item">
+<a href="/v/red-rocks-park-amphitheatre/59006" class="track-click" data-track="sidebar" data-href=":venue/toplist">
+<p class="logo">
+<img src="https://ss3.4sqi.net/img/categories_v2/arts_entertainment/default_bg_512.png" alt="Red Rocks Park & Amphitheatre logo">
+</p><p class="text">
+<span class="name">Red Rocks Park & Amphitheatre</span>
+<span class="location">Morrison, CO </span> </p>
+</a>
+</div>
+<div class="item">
+<a href="/v/oriole-park-at-camden-yards/37395" class="track-click" data-track="sidebar" data-href=":venue/toplist">
+<p class="logo">
+<img src="https://ss3.4sqi.net/img/categories_v2/arts_entertainment/stadium_baseball_bg_512.png" alt="Oriole Park at Camden Yards logo">
+</p><p class="text">
+<span class="name">Oriole Park at Camden Yards</span>
+<span class="location">Baltimore, MD </span> </p>
+</a>
+</div>
+<div class="item">
+<a href="/v/bon-secours-wellness-arena/119306" class="track-click" data-track="sidebar" data-href=":venue/toplist">
+<p class="logo">
+<img src="https://ss3.4sqi.net/img/categories_v2/arts_entertainment/stadium_hockey_bg_512.png" alt="Bon Secours Wellness Arena logo">
+</p><p class="text">
+<span class="name">Bon Secours Wellness Arena</span>
+<span class="location">Greenville, SC </span> </p>
+</a>
+</div>
+<div class="item">
+<a href="/v/cerebral-brewing-congress-park/3317818" class="track-click" data-track="sidebar" data-href=":venue/toplist">
+<p class="logo">
+<span>Verified</span> <img src="https://images.untp.beer/resize?width=176&height=176&background=255,255,255&extend=white&stripmeta=true&url=https://utfb-images.untappd.com/bes4agYv6diBdm7qQ33NsnXD?auto=compress" alt="Cerebral Brewing - Congress Park logo">
+</p><p class="text">
+<span class="name">Cerebral Brewing - Congress Park</span>
+<span class="location">Denver, CO </span> </p>
+</a>
+</div>
+</div>
+</div>
+<div class="box">
+<div class="AdvallyTag" data-slot="/21791133974/untappd/Sidebar_Banner2" id="div-untappd-sidebar2" data-size="300x600,300x250"></div>
+</div>
+</div>
+
+<div class="add-beer-lightbox" style="display: none; position: fixed; background: #fff; z-index: 150;">
+Loading...
+</div>
+<div class="facybox_hide facybox_overlayBG" id="facybox_overlay" style="display: none; opacity: 0.3;"></div>
+</div>
+<script>
+
+$(document).ready(function() {
+	$(document).on("change", "#beer_type", function() {
+		if ($(this).val == "") {
+			$(this).addClass("empty");
+		}
+		else {
+			$(this).removeClass("empty")
+		}
+	});
+
+	setTimeout(function() {
+		if ($(".sidebar").is(":visible")) {
+  			var hC = $(".sidebar").height();
+			$(".main").css("min-height", hC);
+	  	}
+	}, 1000)
+	
+});
+
+</script>
+<script type="text/javascript" language="Javascript" src="https://untappd.com/assets/v3/js/search.js?v=2.8.7"></script>
+<style type="text/css" media="screen">
+			.link-it {
+				color: #fff;
+				text-decoration: underline;
+				font-weight: 800;
+			}
+
+			.link-it:hover {
+				color: #fff;
+				font-weight: 800;
+			}
+
+			.main-banner {
+				float: left;
+	    		text-align: left;
+	    		width: 80%;
+			}
+
+			.action-btn {
+				float: right;
+	    		text-align: right;
+	    		display: block;
+	    		margin-right: 12px;
+	    		margin-top: 7px;
+			}
+		</style>
+<div class="announcement announcementPolicy tos-banner" data-banner="true">
+<div class="announcementInner">Our <a class="link-it" href="/cookie">Cookie Policy</a>, <a class="link-it" href="/terms">Terms of Service</a>, and <a class="link-it" href="/privacy">Privacy Policy</a> have been updated. By continuing to browse our site you agree to these updates. For additonal information or feedback, visit <a class="link-it" href="https://help.untappd.com">help.untappd.com</a></div>
+<a href="javascript:void(0);" onclick="Notice.hide();" class="track-click link-it" style="text-decoration: none;" data-track="header" data-href=":/priavcy">I AGREE</a></p>
+<div style="clear: both;"></div>
+</div>
+<script>
+		var Notice = {
+			hide: function(a){
+
+				$(".tos-banner").slideUp();
+
+				$.ajax({
+					url: "/account/hide_notice?messageId=4",
+					type: "GET",
+					dataType: "json",
+				    error: function(html)
+					{
+
+					},
+					success: function(html)
+					{
+
+					}
+				});
+
+				return false;
+			}
+		}
+		</script>
+<footer>
+<div class="leaderboard-ad">
+<div class="AdvallyTag" style="padding-bottom: 24px;" data-slot="/21791133974/untappd/Foot_Banner" id="div-untappd-footer" data-autosize="leaderboard"></div>
+</div>
+<div class="footer-nav">
+<div class="footer-inner">
+<ul>
+<li>
+<a class="track-click" data-track="footer" data-href=":footer/businesses" href="https://utfb.untappd.com/">Untappd for Business</a>
+</li>
+<li>
+<a class="track-click" data-track="footer" data-href=":footer/businesses/blog" href="https://lounge.untappd.com/">Untappd for Business Blog</a>
+</li>
+<li>
+<a class="track-click" data-track="footer" data-href=":footer/breweries" href="https://untappd.com/breweries">Breweries</a>
+</li>
+<li>
+<a class="track-click" data-track="footer" data-href=":footer/store" href="https://store.untappd.com/">Store</a>
+</li>
+<li>
+<a class="track-click" data-track="footer" data-href=":footer/support" href="http://help.untappd.com/">Support</a>
+</li>
+<li>
+<a class="track-click" data-track="footer" data-href=":footer/careers" href="/careers">Careers</a>
+</li>
+<li>
+<a class="track-click" data-track="footer" data-href=":footer/api" href="/api/">API</a>
+</li>
+<li>
+<a class="track-click" data-track="footer" data-href=":footer/terms" href="/terms">Terms</a>
+</li>
+<li>
+<a class="track-click" data-track="footer" data-href=":footer/privacy" href="/privacy">Privacy</a>
+</li>
+<li>
+<a class="track-click" data-track="footer" data-href=":footer/cookie" href="/cookie">Cookie Policy</a>
+</li>
+<li>
+<a class="track-click" data-track="footer" data-href=":footer/personal_data" href="/privacy/personal-data">Do Not Sell My Personal Information</a>
+</li>
+</ul>
+</div>
+</div>
+<ul class="social">
+<li><a class="track-click" data-track="footer" data-href=":footer/social/twitter" href="https://bit.ly/3T6pKK6" target="_blank"><img src="https://untappd.com/assets/custom/homepage/images/icon-twitter.svg" alt="Icon twitter" /></a></li>
+<li><a class="track-click" data-track="footer" data-href=":footer/social/facebook" href="https://bit.ly/3RVLffu" target="_blank"><img src="https://untappd.com/assets/custom/homepage/images/icon-facebook.svg" alt="Icon facebook" /></a></li>
+<li><a class="track-click" data-track="home" data-href=":footer/social/instagram" href="https://bit.ly/3EyG9D5" target="_blank"><img src="https://untappd.com/assets/custom/homepage/images/icon-instagram.svg" alt="Icon instagram" /></a></li>
+</ul></footer>
+<script type="text/javascript">
+	// polyfill for ie11
+	function getUrlParameter(name) {
+		name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+		var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+		var results = regex.exec(location.search);
+		return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+	};
+
+	$(document).ready(function() {
+		// remove any access tokens, preserve other elements
+		if (history.replaceState) {
+			if (location.href.indexOf("access_token=") >= 0) {
+				const accessTokenURL = getUrlParameter("access_token");
+				let currentURL = location.href;
+				let finalURL = currentURL.replace(`access_token=${accessTokenURL}`, '');
+
+				// if the url has a "&" already in it, then remove the "?" and replace the first "&" with an "?"
+				if (finalURL.indexOf("&") >= 0) {
+					finalURL = finalURL.replace("?", "").replace("&", "?");
+				} else {
+					finalURL = finalURL.split("?")[0];
+				}
+
+				history.replaceState(null, "", finalURL);
+			}
+		}
+	})
+</script>
+<script type="text/javascript">
+	// Clear Text Feild
+	function clearText(thefield) {
+		if (thefield.defaultValue == thefield.value)
+			thefield.value = ""
+	}
+
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-11061050-10']);
+
+	_gaq.push(['_set', 'displayFeatures', true]);
+
+	_gaq.push(['_setCustomVar',
+		1, // This custom var is set to slot #1.  Required parameter.
+		'User Type', // The name of the custom variable.  Required parameter.
+		'Visitor', // Sets the value of "User Type" to "Member" or "Visitor" depending on status.  Required parameter.
+		2 // Sets the scope to session-level.  Optional parameter.
+	]);
+
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script');
+		ga.type = 'text/javascript';
+		ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+	})();
+
+	</script>
+<script type="text/javascript">
+	(function(i, s, o, g, r, a, m) {
+		i['SLScoutObject'] = r;
+		i[r] = i[r] || function() {
+			(i[r].q = i[r].q || []).push(arguments)
+		}, i[r].l = 1 * new Date();
+		a = s.createElement(o),
+			m = s.getElementsByTagName(o)[0];
+		a.async = 1;
+		a.src = g;
+		m.parentNode.insertBefore(a, m)
+	})(window, document, 'script', 'https://scout-cdn.salesloft.com/sl.js', 'slscout');
+	slscout(["init", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0IjoxMDEyOTV9.kyvVxzaXkHFioFsbKvRyKkXkv6AyP-mnE5iJJdlsMsU"]);
+</script>
+<script>(function(){/*
+				Copyright The Closure Library Authors.
+				SPDX-License-Identifier: Apache-2.0
+				*/
+				'use strict';var g=function(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}},l=this||self,m=/^[\w+/_-]+[=]{0,2}$/,p=null,q=function(){},r=function(a){var b=typeof a;if("object"==b)if(a){if(a instanceof Array)return"array";if(a instanceof Object)return b;var c=Object.prototype.toString.call(a);if("[object Window]"==c)return"object";if("[object Array]"==c||"number"==typeof a.length&&"undefined"!=typeof a.splice&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("splice"))return"array";
+				if("[object Function]"==c||"undefined"!=typeof a.call&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("call"))return"function"}else return"null";else if("function"==b&&"undefined"==typeof a.call)return"object";return b},u=function(a,b){function c(){}c.prototype=b.prototype;a.prototype=new c;a.prototype.constructor=a};var v=function(a,b){Object.defineProperty(l,a,{configurable:!1,get:function(){return b},set:q})};var y=function(a,b){this.b=a===w&&b||"";this.a=x},x={},w={};var aa=function(a,b){a.src=b instanceof y&&b.constructor===y&&b.a===x?b.b:"type_error:TrustedResourceUrl";if(null===p)b:{b=l.document;if((b=b.querySelector&&b.querySelector("script[nonce]"))&&(b=b.nonce||b.getAttribute("nonce"))&&m.test(b)){p=b;break b}p=""}b=p;b&&a.setAttribute("nonce",b)};var z=function(){return Math.floor(2147483648*Math.random()).toString(36)+Math.abs(Math.floor(2147483648*Math.random())^+new Date).toString(36)};var A=function(a,b){b=String(b);"application/xhtml+xml"===a.contentType&&(b=b.toLowerCase());return a.createElement(b)},B=function(a){this.a=a||l.document||document};B.prototype.appendChild=function(a,b){a.appendChild(b)};var C=function(a,b,c,d,e,f){try{var k=a.a,h=A(a.a,"SCRIPT");h.async=!0;aa(h,b);k.head.appendChild(h);h.addEventListener("load",function(){e();d&&k.head.removeChild(h)});h.addEventListener("error",function(){0<c?C(a,b,c-1,d,e,f):(d&&k.head.removeChild(h),f())})}catch(n){f()}};var ba=l.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),ca=l.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),da=l.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu"),ea=function(a,b,c){this.b=a;this.f=new B(this.b);this.a=null;this.c=[];this.g=!1;this.i=b;this.h=c},F=function(a){if(a.b.body&&!a.g){var b=
+				function(){D(a);l.setTimeout(function(){return E(a,3)},50)};C(a.f,a.i,2,!0,function(){l[a.h]||b()},b);a.g=!0}},D=function(a){for(var b=G(1,5),c=0;c<b;c++){var d=H(a);a.b.body.appendChild(d);a.c.push(d)}b=H(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=G(100,110).toString()+"%";b.style.zIndex=G(2147483544,2147483644).toString();b.style["background-color"]=I(249,259,242,252,219,229);b.style["box-shadow"]="0 0 12px #888";b.style.color=I(0,10,0,10,0,10);b.style.display=
+				"flex";b.style["justify-content"]="center";b.style["font-family"]="Roboto, Arial";c=H(a);c.style.width=G(80,85).toString()+"%";c.style.maxWidth=G(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style["align-items"]="flex-start";c.style["justify-content"]="center";d=A(a.f.a,"IMG");d.className=z();d.src=ba;d.style.height="24px";d.style.width="24px";d.style["padding-right"]="16px";var e=H(a),f=H(a);f.style["font-weight"]="bold";f.textContent=ca;var k=H(a);k.textContent=da;J(a,
+				e,f);J(a,e,k);J(a,c,d);J(a,c,e);J(a,b,c);a.a=b;a.b.body.appendChild(a.a);b=G(1,5);for(c=0;c<b;c++)d=H(a),a.b.body.appendChild(d),a.c.push(d)},J=function(a,b,c){for(var d=G(1,5),e=0;e<d;e++){var f=H(a);b.appendChild(f)}b.appendChild(c);c=G(1,5);for(d=0;d<c;d++)e=H(a),b.appendChild(e)},G=function(a,b){return Math.floor(a+Math.random()*(b-a))},I=function(a,b,c,d,e,f){return"rgb("+G(Math.max(a,0),Math.min(b,255)).toString()+","+G(Math.max(c,0),Math.min(d,255)).toString()+","+G(Math.max(e,0),Math.min(f,
+				255)).toString()+")"},H=function(a){a=A(a.f.a,"DIV");a.className=z();return a},E=function(a,b){0>=b||null!=a.a&&0!=a.a.offsetHeight&&0!=a.a.offsetWidth||(fa(a),D(a),l.setTimeout(function(){return E(a,b-1)},50))},fa=function(a){var b=a.c;var c="undefined"!=typeof Symbol&&Symbol.iterator&&b[Symbol.iterator];b=c?c.call(b):{next:g(b)};for(c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.c=[];(b=a.a)&&b.parentNode&&b.parentNode.removeChild(b);a.a=null};var ia=function(a,b,c,d,e){var f=ha(c),k=function(n){n.appendChild(f);l.setTimeout(function(){f?(0!==f.offsetHeight&&0!==f.offsetWidth?b():a(),f.parentNode&&f.parentNode.removeChild(f)):a()},d)},h=function(n){document.body?k(document.body):0<n?l.setTimeout(function(){h(n-1)},e):b()};h(3)},ha=function(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};var K={},L=null;var M=function(){},N="function"==typeof Uint8Array,O=function(a,b){a.b=null;b||(b=[]);a.j=void 0;a.f=-1;a.a=b;a:{if(b=a.a.length){--b;var c=a.a[b];if(!(null===c||"object"!=typeof c||Array.isArray(c)||N&&c instanceof Uint8Array)){a.g=b-a.f;a.c=c;break a}}a.g=Number.MAX_VALUE}a.i={}},P=[],Q=function(a,b){if(b<a.g){b+=a.f;var c=a.a[b];return c===P?a.a[b]=[]:c}if(a.c)return c=a.c[b],c===P?a.c[b]=[]:c},R=function(a,b,c){a.b||(a.b={});if(!a.b[c]){var d=Q(a,c);d&&(a.b[c]=new b(d))}return a.b[c]};
+				M.prototype.h=N?function(){var a=Uint8Array.prototype.toJSON;Uint8Array.prototype.toJSON=function(){var b;void 0===b&&(b=0);if(!L){L={};for(var c="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split(""),d=["+/=","+/","-_=","-_.","-_"],e=0;5>e;e++){var f=c.concat(d[e].split(""));K[e]=f;for(var k=0;k<f.length;k++){var h=f[k];void 0===L[h]&&(L[h]=k)}}}b=K[b];c=[];for(d=0;d<this.length;d+=3){var n=this[d],t=(e=d+1<this.length)?this[d+1]:0;h=(f=d+2<this.length)?this[d+2]:0;k=n>>2;n=(n&
+				3)<<4|t>>4;t=(t&15)<<2|h>>6;h&=63;f||(h=64,e||(t=64));c.push(b[k],b[n],b[t]||"",b[h]||"")}return c.join("")};try{return JSON.stringify(this.a&&this.a,S)}finally{Uint8Array.prototype.toJSON=a}}:function(){return JSON.stringify(this.a&&this.a,S)};var S=function(a,b){return"number"!==typeof b||!isNaN(b)&&Infinity!==b&&-Infinity!==b?b:String(b)};M.prototype.toString=function(){return this.a.toString()};var T=function(a){O(this,a)};u(T,M);var U=function(a){O(this,a)};u(U,M);var ja=function(a,b){this.c=new B(a);var c=R(b,T,5);c=new y(w,Q(c,4)||"");this.b=new ea(a,c,Q(b,4));this.a=b},ka=function(a,b,c,d){b=new T(b?JSON.parse(b):null);b=new y(w,Q(b,4)||"");C(a.c,b,3,!1,c,function(){ia(function(){F(a.b);d(!1)},function(){d(!0)},Q(a.a,2),Q(a.a,3),Q(a.a,1))})};var la=function(a,b){V(a,"internal_api_load_with_sb",function(c,d,e){ka(b,c,d,e)});V(a,"internal_api_sb",function(){F(b.b)})},V=function(a,b,c){a=l.btoa(a+b);v(a,c)},W=function(a,b,c){for(var d=[],e=2;e<arguments.length;++e)d[e-2]=arguments[e];e=l.btoa(a+b);e=l[e];if("function"==r(e))e.apply(null,d);else throw Error("API not exported.");};var X=function(a){O(this,a)};u(X,M);var Y=function(a){this.h=window;this.a=a;this.b=Q(this.a,1);this.f=R(this.a,T,2);this.g=R(this.a,U,3);this.c=!1};Y.prototype.start=function(){ma();var a=new ja(this.h.document,this.g);la(this.b,a);na(this)};
+				var ma=function(){var a=function(){if(!l.frames.googlefcPresent)if(document.body){var b=document.createElement("iframe");b.style.display="none";b.style.width="0px";b.style.height="0px";b.style.border="none";b.style.zIndex="-1000";b.style.left="-1000px";b.style.top="-1000px";b.name="googlefcPresent";document.body.appendChild(b)}else l.setTimeout(a,5)};a()},na=function(a){var b=Date.now();W(a.b,"internal_api_load_with_sb",a.f.h(),function(){var c;var d=a.b,e=l[l.btoa(d+"loader_js")];if(e){e=l.atob(e);
+				e=parseInt(e,10);d=l.btoa(d+"loader_js").split(".");var f=l;d[0]in f||"undefined"==typeof f.execScript||f.execScript("var "+d[0]);for(;d.length&&(c=d.shift());)d.length?f[c]&&f[c]!==Object.prototype[c]?f=f[c]:f=f[c]={}:f[c]=null;c=Math.abs(b-e);c=1728E5>c?0:c}else c=-1;0!=c&&(W(a.b,"internal_api_sb"),Z(a,Q(a.a,6)))},function(c){Z(a,c?Q(a.a,4):Q(a.a,5))})},Z=function(a,b){a.c||(a.c=!0,a=new l.XMLHttpRequest,a.open("GET",b,!0),a.send())};(function(a,b){l[a]=function(c){for(var d=[],e=0;e<arguments.length;++e)d[e-0]=arguments[e];l[a]=q;b.apply(null,d)}})("__d3lUW8vwsKlB__",function(a){"function"==typeof window.atob&&(a=window.atob(a),a=new X(a?JSON.parse(a):null),(new Y(a)).start())});}).call(this);
+
+				window.__d3lUW8vwsKlB__("WyI4OTQ0NDYwMjIxYjYyZTkxIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2YvQUdTS1d4VXRKNVlvdjhfYjNSd19pZWtuaDZVZ0hNR3JsNk1NVTVSVzhrTEpSQXdZdk5wTzFEZ2ZYajNqNld2dkY2N2ZTbWdXdk96X3BNa0NkN1hSNjNUZXZ4QVx1MDAzZCJdCixbMjAsImRpdi1ncHQtYWQiLDEwMCwiT0RrME5EUTJNREl5TVdJMk1tVTVNUVx1MDAzZFx1MDAzZCIsW251bGwsbnVsbCxudWxsLCJodHRwczovL3d3dy5nc3RhdGljLmNvbS8wZW1uL2YvcC84OTQ0NDYwMjIxYjYyZTkxLmpzP3VzcXBcdTAwM2RDQkkiXQpdCiwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vbC9BR1NLV3hWbXlIMUpTYThtNENEcGtrUEtDNEt0YVRPOC1hZmU0RzhkSTdNMDNrT2R3NEtmVVVZUHFYc296NncycFZGc0Fid3E5S0l6ZDFYMmxGa0VDc2VBP2FiXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2wvQUdTS1d4Vk1ON0RCVWlmdzFfc2VvN3dON1oxSzFVdWZBZWwzY2lmS3Q3Z1VjZllnVExqWTRfWXpEczhULVhSdmVHVjVadzYzVkk5Wk1ocGh1Sk5SeUVwRj9hYlx1MDAzZDJcdTAwMjZzYmZcdTAwM2QxIiwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vbC9BR1NLV3hYd0w2ekh6MkRsWWV4alNjTDhGTXJSMnd2dkpBUndoYUk0T1d5YzVtMDlFVi1uTmF4WnRodE0xNjZ0U21DeFUzVm5pc1kzdUM5X1JsaEpiSzZUP3NiZlx1MDAzZDIiXQo=");</script>
+<script type="text/javascript" id="AdvallyRules" src="https://cdn.adligature.com/untappd/prod/rules.js"></script>
+</body>
+</html>
