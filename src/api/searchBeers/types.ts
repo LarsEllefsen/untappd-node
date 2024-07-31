@@ -1,4 +1,4 @@
-export type BeerItem = {
+export type SearchResult = {
   id: string;
   name: string;
   brewery: string;

@@ -1,3 +1,3 @@
-import getBeer from "./getBeer";
+import getBeer from './getBeer';
 
 export default getBeer;

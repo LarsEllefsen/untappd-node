@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Untappd | 404</title>
+
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Untappd is a new mobile web app that allows you to socially share the brew you're currently enjoying, as well as where you're enjoying it, with your friends!" />
+<meta name="author" content="The Untappd Team" />
+<meta name="Copyright" content="Copyright Untappd 2024. All Rights Reserved." />
+<meta name="DC.title" content="Untappd" />
+<meta name="DC.creator" content="The Untappd Team" />
+<meta name="google-site-verification" content="PZi2w1ivACX9bVn6tSwqdBT40iVT7zCkFtOiRA_XV9U" />
+<meta name="bitly-verification" content="b3080898518a" />
+
+<link rel="icon" type="image/png" href="https://assets.untappd.com/assets/favicon-32x32-v2.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://assets.untappd.com/assets/favicon-16x16-v2.png" sizes="16x16">
+
+<link rel="apple-touch-icon" sizes="144x144" href="https://assets.untappd.com/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="https://assets.untappd.com/assets/css/master.css" />
+<link rel="stylesheet" href="https://assets.untappd.com/assets/v3/css/style.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<link href="https://assets.untappd.com/assets/v2/css/fonts.css" rel="stylesheet" type="text/css" />
+<!--[if lte IE 7.0]><script src="https://assets.untappd.com/assets/js/ie6.js"></script><![endif]-->
+<style type="text/css">
+	.search_404 {
+		-webkit-border-radius: 4px;
+		border-radius: 4px;
+		font-weight: 400;
+		padding-top: 9px;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		padding-right: 32px;
+		background: white url(https://assets.untappd.com/assets/v3/images/header_search_icon.png) 96% center no-repeat;
+		border: 1px solid #ffcc00;
+		width: 75%;
+		padding: 8px;
+		font-size: 16px;
+		float: left;
+	}
+
+	.yellow {
+		margin-top: 2px;
+	}
+
+	#maintenance {
+		-webkit-border-radius: 0px !important;
+		border-radius: 0px !important;
+	}
+
+	#maintenance div.info {
+		width: 500px;
+		margin: 0px auto 15px;
+	}
+
+	#maintenance p.info {
+		width: 100% !important;
+		margin-bottom: 15px;
+		font-size: 16px !important;
+	}
+
+	#maintenance p.small {
+		font-size: 14px;
+	}
+	</style>
+</body>
+<div id="maintenance" style="width: 800px;">
+<h1>This page cannot be found.</h1>
+<p class="info">We tried looking everywhere, and we couldn't find it.</p>
+<div class="info">
+<form method="/search" action="/search" id="search-form">
+<input type="text" class="search_404" name="q" placeholder="Search for your Beer..." />
+<a class="yellow button">Search</a>
+<div class="clear"></div>
+</form>
+</div>
+<p class="info small">Need more help? <a href="http://help.untappd.com">http://help.untappd.com</a></p>
+</div>
+<script>
+$(document).ready(function() {
+	$(".yellow").click(function() {
+		$("#search-form").submit();
+		return false;
+	});
+})
+</script>
+</html>
