@@ -3,6 +3,7 @@ enableFetchMocks();
 
 import { getBeer } from "../../src";
 import { getMockFile } from "../utils";
+import { HTTPException } from "../../src/common/HTTPException";
 
 describe("get beer", () => {
   beforeEach(() => {
@@ -48,5 +49,15 @@ describe("get beer", () => {
     const beer = await getBeer("144709");
 
     expect(beer.rating).toEqual(0);
+  });
+
+  it("should throw HTTPException if response was not ok", async () => {
+    const expectedException = new HTTPException(429, "Too many requests");
+    fetchMock.mockResponse("", {
+      status: 429,
+      statusText: "Too many requests",
+    });
+
+    expect(getBeer("144709")).rejects.toThrow(expectedException);
   });
 });
