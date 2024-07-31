@@ -1,8 +1,8 @@
 import { getAbvFromString } from "../../utils/getAbvFromString";
 import { BEER_DETAILS_CLASS_NAME } from "./constants";
-import { BeerItem } from "./types";
+import { SearchResult } from "./types";
 
-export function searchResultsToBeerItems(element: Element): BeerItem {
+export function searchResultsToBeerItems(element: Element): SearchResult {
   const beerDetails = Array.from(
     element.getElementsByClassName(BEER_DETAILS_CLASS_NAME)
   );
