@@ -1,12 +1,7 @@
 import { getAbvFromString } from "../../utils/getAbvFromString";
-import { BEER_DETAILS_CLASS_NAME } from "./constants";
 import { SearchResult } from "./types";
 
 export function searchResultsToBeerItems(element: Element): SearchResult {
-  const beerDetails = Array.from(
-    element.getElementsByClassName(BEER_DETAILS_CLASS_NAME)
-  );
-
   const anchorTag = element.querySelector<HTMLAnchorElement>(".name > a");
   if (anchorTag == null) {
     throw new DOMException(

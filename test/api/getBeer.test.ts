@@ -65,7 +65,6 @@ describe("get beer", () => {
   });
 
   it("should return null if response is 404", async () => {
-    const expectedException = new HTTPException(429, "Too many requests");
     fetchMock.mockResponse(getMockFile("get_beer_not_found_response"), {
       status: 404,
     });
