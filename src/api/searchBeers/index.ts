@@ -1,3 +1,3 @@
-import searchBeers from "./searchBeers";
+import searchBeers from './searchBeers';
 
 export default searchBeers;

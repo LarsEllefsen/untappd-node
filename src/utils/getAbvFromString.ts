@@ -1,12 +1,12 @@
 export function getAbvFromString(string: string): number | undefined {
-  if (string.includes("N/A")) {
+  if (string.includes('N/A')) {
     return undefined;
   }
 
-  const splitString = string.split("%");
+  const splitString = string.split('%');
   if (splitString.length != 2) {
     throw new DOMException(
-      `Unable to get ABV from string ${string}, does not conform to expected format.`
+      `Unable to get ABV from string ${string}, does not conform to expected format.`,
     );
   }
 

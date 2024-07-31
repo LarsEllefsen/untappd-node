@@ -1,14 +1,14 @@
-import { JSDOM } from "jsdom";
-import { HTTPException } from "../common/HTTPException";
+import { JSDOM } from 'jsdom';
+import { HTTPException } from '../common/HTTPException';
 
 export default async function fetchDocument(
   url: string,
-  searchParameters: URLSearchParams | undefined = undefined
+  searchParameters: URLSearchParams | undefined = undefined,
 ): Promise<Document> {
   const params = searchParameters
-    ? "?" + searchParameters.toString()
+    ? '?' + searchParameters.toString()
     : undefined;
-  const response = await fetch(`${url}${params}`, { method: "GET" });
+  const response = await fetch(`${url}${params}`, { method: 'GET' });
 
   if (!response.ok) {
     throw new HTTPException(response.status, response.statusText);
