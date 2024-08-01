@@ -3,7 +3,7 @@ enableFetchMocks();
 
 import { getBeer } from '../../src';
 import { getMockFile } from '../utils';
-import { HTTPException } from '../../src/common/HTTPException';
+import HTTPException from '../../src/common/HTTPException';
 
 describe('get beer', () => {
   beforeEach(() => {

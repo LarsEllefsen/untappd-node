@@ -1,5 +1,5 @@
 import { JSDOM } from 'jsdom';
-import { HTTPException } from '../common/HTTPException';
+import HTTPException from '../common/HTTPException';
 
 export default async function fetchDocument(
   url: string,

@@ -1,4 +1,4 @@
-import { HTTPException } from '../../common/HTTPException';
+import HTTPException from '../../common/HTTPException';
 import fetchDocument from '../../utils/fetchDocument';
 import { getAbvFromString } from '../../utils/getAbvFromString';
 import { GET_BEER_URL } from './constants';

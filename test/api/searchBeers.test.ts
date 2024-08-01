@@ -4,7 +4,7 @@ enableFetchMocks();
 import { searchBeers } from '../../src';
 import { getMockFile } from '../utils';
 import { RESULTS_CONTAINER_CLASS_NAME } from '../../src/api/searchBeers/constants';
-import { HTTPException } from '../../src/common/HTTPException';
+import HTTPException from '../../src/common/HTTPException';
 
 describe('Search beers', () => {
   beforeEach(() => {
