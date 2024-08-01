@@ -1,6 +1,8 @@
-# Untappd API
+# untappd-node
 
 **Note: This is not an official API. Breaking changes may occur at any time. Use at your own risk.**
+
+Untappd-node is a lightweight third party API used to fetch data from Untappd. The API is fully typed in typescript and requires no API credentials.
 
 ## Installation
 
@@ -9,21 +11,21 @@
 NPM:
 
 ```
-npm install untappd-api
+npm install untappd-node
 ```
 
 Yarn:
 
 ```
-yarn add untappd-api
+yarn add untappd-node
 ```
 
 To use it simply import the functions you wish to use (Functions are documented below):
 
 ```ts
-import { searchBeers } from "untappd-api";
+import { searchBeers } from 'untappd-node';
 
-const results = await searchBeers("3 fonteinen");
+const results = await searchBeers('3 fonteinen');
 ```
 
 ## Documentation
@@ -39,9 +41,9 @@ Returns a list of `SearchResult` that matches your search. Returns an empty list
 Example:
 
 ```ts
-import { searchBeers } from "untappd-api";
+import { searchBeers } from 'untappd-node';
 
-const results = await searchBeers("3 fonteinen");
+const results = await searchBeers('3 fonteinen');
 ```
 
 #### getBeer
@@ -53,11 +55,31 @@ Gets information about a beer with the given ID. Returns null if no beer was fou
 Example:
 
 ```ts
-import { getBeer } from "untappd-api";
+import { getBeer } from 'untappd-node';
 
-const beer = await getBeer("144709");
+const beer = await getBeer('144709');
 if (beer !== null) {
   // Do something
+}
+```
+
+### Error handling
+
+The API will throw `HTTPException` if the call to Untappd fails for any reason. This `HTTPException` includes the status code and the corresponding error message:
+
+```ts
+import { getBeer } from 'untappd-node';
+import type { HTTPException } from 'untappd-node';
+
+try {
+  const beer = await getBeer('1234');
+  // ...
+} catch (error) {
+  if (error instanceof HTTPException) {
+    // You now have typed access to statusCode and message
+    console.log(error.statusCode);
+  }
+  // Generic error handling
 }
 ```
 
