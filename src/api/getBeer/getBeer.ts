@@ -1,4 +1,4 @@
-import { Beer } from '@types';
+import { Beer } from '../../types';
 import HTTPException from '../../common/HTTPException';
 import fetchDocument from '../../utils/fetchDocument';
 import { getAbvFromString } from '../../utils/getAbvFromString';
