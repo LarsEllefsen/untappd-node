@@ -15,6 +15,10 @@
     "node": ">=20.0.0"
   },
   "author": "Lars Moe Ellefsen",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:LarsEllefsen/untappd-node.git"
+  },
   "license": "ISC",
   "dependencies": {
     "jsdom": "^24.1.1"
