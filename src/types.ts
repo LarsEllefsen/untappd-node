@@ -7,6 +7,7 @@ export type Beer = {
   image: string;
   rating: number;
   numRatings: number;
+  url: string;
 };
 
 export type SearchResult = {

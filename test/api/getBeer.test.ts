@@ -10,8 +10,10 @@ describe('get beer', () => {
     fetchMock.resetMocks();
   });
 
-  it('should return a list of search results', async () => {
-    fetchMock.mockResponse(getMockFile('get_beer_response'));
+  it('should return a beer', async () => {
+    fetchMock.mockResponse(getMockFile('get_beer_response'), {
+      url: 'https://untappd.com/b/brouwerij-3-fonteinen-3-fonteinen-oude-geuze-golden-blend/144709',
+    });
 
     const beer = await getBeer('144709');
 
@@ -26,6 +28,9 @@ describe('get beer', () => {
     );
     expect(beer?.rating).toEqual(4.36376);
     expect(beer?.numRatings).toEqual(11272);
+    expect(beer?.url).toBe(
+      'https://untappd.com/b/brouwerij-3-fonteinen-3-fonteinen-oude-geuze-golden-blend/144709',
+    );
   });
 
   it('should throw DOMException if DOM is not as expected', async () => {

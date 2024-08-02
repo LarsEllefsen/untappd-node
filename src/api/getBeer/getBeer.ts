@@ -6,7 +6,7 @@ import { GET_BEER_URL } from './constants';
 
 export default async function getBeer(id: string): Promise<Beer | null> {
   try {
-    const document = await fetchDocument(GET_BEER_URL + id);
+    const { document, url } = await fetchDocument(GET_BEER_URL + id);
 
     const name = document.querySelector('.name > h1')?.textContent;
     if (!name) {
@@ -77,6 +77,7 @@ export default async function getBeer(id: string): Promise<Beer | null> {
       image,
       rating,
       numRatings,
+      url,
     };
   } catch (error) {
     if (error instanceof HTTPException && error.statusCode === 404) {

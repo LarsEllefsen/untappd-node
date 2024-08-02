@@ -8,8 +8,8 @@ import { searchResultsToBeerItems } from './mapper';
 
 export default async function searchBeers(name: string) {
   const params = new URLSearchParams({ q: name });
-  const searchResultsPage = await fetchDocument(SEARCH_URL, params);
-  const searchResults = getSearchResultsFromPage(searchResultsPage);
+  const { document } = await fetchDocument(SEARCH_URL, params);
+  const searchResults = getSearchResultsFromPage(document);
 
   return searchResults.map(searchResultsToBeerItems);
 }
