@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.4
+
+Fixed an issue where getBeer would always return null.
+
+### Added
+
+- Added URL to Beer.
+
 ## 1.0.3
 
 ### Added
