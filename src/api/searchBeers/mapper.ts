@@ -1,5 +1,5 @@
 import { getAbvFromString } from '../../utils/getAbvFromString';
-import { SearchResult } from './types';
+import { SearchResult } from '@types';
 
 export function searchResultsToBeerItems(element: Element): SearchResult {
   const anchorTag = element.querySelector<HTMLAnchorElement>('.name > a');

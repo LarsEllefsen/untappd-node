@@ -1,8 +1,8 @@
+import { Beer } from '@types';
 import HTTPException from '../../common/HTTPException';
 import fetchDocument from '../../utils/fetchDocument';
 import { getAbvFromString } from '../../utils/getAbvFromString';
 import { GET_BEER_URL } from './constants';
-import { Beer } from './types';
 
 export default async function getBeer(id: string): Promise<Beer | null> {
   try {
