@@ -1,12 +1,11 @@
 {
   "name": "untappd-node",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "dist/index.js",
-  "types": "dist/types/index.d.ts",
+  "types": "dist/index.d.ts",
   "files": [
-    "./dist",
-    "./types"
+    "./dist"
   ],
   "scripts": {
     "test": "jest",
