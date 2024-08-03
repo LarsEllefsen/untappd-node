@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.5
+
+Fixed an issue where getting products with only 1 rating would fail.
+
 ## 1.0.4
 
 Fixed an issue where getBeer would always return null.
