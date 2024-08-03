@@ -88,7 +88,7 @@ export default async function getBeer(id: string): Promise<Beer | null> {
 }
 
 function getNumRatingsFromString(string: string): number {
-  const splitString = string.split('Ratings');
+  const splitString = string.split('Rating');
   if (splitString.length != 2) {
     throw new DOMException(
       `Unable to get number of ratings from string ${string}, does not conform to expected format.`,

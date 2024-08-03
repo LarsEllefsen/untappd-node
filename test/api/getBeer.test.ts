@@ -78,4 +78,12 @@ describe('get beer', () => {
 
     expect(beer).toBeNull();
   });
+
+  it('should be able to get number of ratings when product only has 1 rating', async () => {
+    fetchMock.mockResponse(getMockFile('get_beer_1_rating_response'));
+
+    const beer = await getBeer('5735374');
+
+    expect(beer?.numRatings).toBe(1);
+  });
 });
