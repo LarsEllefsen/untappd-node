@@ -1,6 +1,6 @@
 {
   "name": "untappd-node",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "An unofficial third party API for Untappd",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
