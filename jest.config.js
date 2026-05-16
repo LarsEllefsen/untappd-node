@@ -2,7 +2,7 @@
 module.exports = {
   testEnvironment: "node",
   transform: {
-    "^.+.tsx?$": ["ts-jest", {}],
+    "^.+.tsx?$": ["ts-jest", { tsconfig: "tsconfig.json" }],
   },
   setupFiles: ["./test/setupJest.ts"],
   resetMocks: false,

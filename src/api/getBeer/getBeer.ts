@@ -2,11 +2,16 @@ import { Beer } from '../../types';
 import HTTPException from '../../common/HTTPException';
 import fetchDocument from '../../utils/fetchDocument';
 import { getAbvFromString } from '../../utils/getAbvFromString';
-import { GET_BEER_URL } from './constants';
+import { GET_BEER_PATH } from './constants';
+import { UNTAPPD_URL } from '../../common/constants';
 
-export default async function getBeer(id: string): Promise<Beer | null> {
+export default async function getBeer(
+  id: string,
+  options?: { baseUrl?: string },
+): Promise<Beer | null> {
+  const baseUrl = options?.baseUrl ?? UNTAPPD_URL;
   try {
-    const { document, url } = await fetchDocument(GET_BEER_URL + id);
+    const { document, url } = await fetchDocument(baseUrl, GET_BEER_PATH + id);
 
     const name = document.querySelector('.name > h1')?.textContent;
     if (!name) {
@@ -68,6 +73,9 @@ export default async function getBeer(id: string): Promise<Beer | null> {
     }
     const numRatings = getNumRatingsFromString(numRatingsString);
 
+    const productUrl =
+      document.getElementById('canonical')?.getAttribute('href') ?? url;
+
     return {
       id,
       name,
@@ -77,7 +85,7 @@ export default async function getBeer(id: string): Promise<Beer | null> {
       image,
       rating,
       numRatings,
-      url,
+      url: productUrl,
     };
   } catch (error) {
     if (error instanceof HTTPException && error.statusCode === 404) {

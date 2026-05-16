@@ -37,7 +37,8 @@ describe('fetch document', () => {
 
     // Call fetchDocument
     const result = await fetchDocument(
-      'https://untappd.com/b/brouwerij-3-fonteinen-3-fonteinen-oude-geuze-golden-blend/144709',
+      'https://untappd.com',
+      '/b/brouwerij-3-fonteinen-3-fonteinen-oude-geuze-golden-blend/144709',
     );
 
     // Verify the mock was called
@@ -74,7 +75,8 @@ describe('fetch document', () => {
 
     // First call - should trigger browser fallback
     const result1 = await fetchDocument(
-      'https://untappd.com/b/brouwerij-3-fonteinen-3-fonteinen-oude-geuze-golden-blend/144709',
+      'https://untappd.com',
+      '/b/brouwerij-3-fonteinen-3-fonteinen-oude-geuze-golden-blend/144709',
     );
 
     // Verify the browser mock was called
@@ -98,7 +100,8 @@ describe('fetch document', () => {
 
     // Second call - should use the previously set headers
     const result2 = await fetchDocument(
-      'https://untappd.com/b/another-beer/456',
+      'https://untappd.com',
+      '/b/another-beer/456',
     );
 
     // Verify the browser mock was NOT called again
@@ -125,7 +128,10 @@ describe('fetch document', () => {
       url: 'https://untappd.com/b/some-beer/123',
     });
 
-    const result = await fetchDocument('https://untappd.com/b/some-beer/123');
+    const result = await fetchDocument(
+      'https://untappd.com',
+      '/b/some-beer/123',
+    );
 
     // Verify getDocumentWithBrowser was NOT called
     expect(mockGetDocumentWithBrowser).not.toHaveBeenCalled();
@@ -143,7 +149,7 @@ describe('fetch document', () => {
     });
 
     await expect(
-      fetchDocument('https://untappd.com/b/some-beer/123'),
+      fetchDocument('https://untappd.com', '/b/some-beer/123'),
     ).rejects.toThrow();
 
     // Verify getDocumentWithBrowser was NOT called

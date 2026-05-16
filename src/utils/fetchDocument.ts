@@ -1,6 +1,7 @@
 import { JSDOM } from 'jsdom';
 import HTTPException from '../common/HTTPException';
 import { getDocumentWithBrowser } from './getDocumentWithBrowser';
+import { UNTAPPD_URL } from '../common/constants';
 
 declare global {
   // eslint-disable-next-line no-var
@@ -8,11 +9,12 @@ declare global {
 }
 
 export default async function fetchDocument(
-  url: string,
+  baseUrl: string,
+  path: string,
   searchParameters: URLSearchParams | undefined = undefined,
 ): Promise<{ document: Document; url: string }> {
   const params = searchParameters ? '?' + searchParameters.toString() : '';
-  const urlToFetch = url + params;
+  const urlToFetch = baseUrl + path + params;
   const response = await fetch(urlToFetch, {
     method: 'GET',
     headers: global.untappdNodeHeaders ?? undefined,
@@ -34,6 +36,6 @@ export default async function fetchDocument(
 
   return {
     document: DOM.window.document,
-    url: response.url,
+    url: UNTAPPD_URL + path,
   };
 }

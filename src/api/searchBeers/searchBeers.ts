@@ -1,14 +1,19 @@
+import { UNTAPPD_URL } from '../../common/constants';
 import fetchDocument from '../../utils/fetchDocument';
 import {
   BEER_ITEM_CLASS_NAME,
   RESULTS_CONTAINER_CLASS_NAME,
-  SEARCH_URL,
+  SEARCH_PATH,
 } from './constants';
 import { searchResultsToBeerItems } from './mapper';
 
-export default async function searchBeers(name: string) {
+export default async function searchBeers(
+  name: string,
+  options?: { baseUrl?: string },
+) {
+  const baseUrl = options?.baseUrl ?? UNTAPPD_URL;
   const params = new URLSearchParams({ q: name });
-  const { document } = await fetchDocument(SEARCH_URL, params);
+  const { document } = await fetchDocument(baseUrl, SEARCH_PATH, params);
   const searchResults = getSearchResultsFromPage(document);
 
   return searchResults.map(searchResultsToBeerItems);

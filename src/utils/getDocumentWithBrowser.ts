@@ -5,7 +5,7 @@ export const getDocumentWithBrowser = async (url: string) => {
   const { page, browser } = await connect({
     headless: true,
     turnstile: true,
-    disableXvfb: false,
+    disableXvfb: true,
   });
   try {
     const response = await page.goto(url);
