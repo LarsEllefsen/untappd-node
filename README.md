@@ -20,15 +20,42 @@ Yarn:
 yarn add untappd-node
 ```
 
-To use it simply import the functions you wish to use (Functions are documented below):
+The recommended way to consume use this package is to instantiate a new UntappdClient which exposes all the availble functions:
+
+```ts
+import { UntappdClient } from 'untappd-node';
+
+const client = new UntappdClient();
+const results = await client.searchBeers('3 fonteinen');
+```
+
+It is possible to import and use the functions without a client if you wish to do so instead (But note that this may be deprecated in favor of the client in the future):
 
 ```ts
 import { searchBeers } from 'untappd-node';
 
-const results = await searchBeers('3 fonteinen');
+const results = await client.searchBeers('3 fonteinen');
 ```
 
 ## Documentation
+
+### Configuration
+
+You can configre the UntappdClient by passing a config object to the `UntappdClient` constructor:
+
+```ts
+import { UntappdClient } from 'untappd-node';
+
+const client = new UntappdClient({ baseUrl: 'http://localhost:3000' });
+```
+
+Possible config values are:
+
+- [baseUrl](#baseUrl)
+
+#### baseUrl
+
+Used to override the base url used. Can be useful for local testing or routing traffic through a proxy.
 
 ### API
 
@@ -41,9 +68,10 @@ Returns a list of `SearchResult` that matches your search. Returns an empty list
 Example:
 
 ```ts
-import { searchBeers } from 'untappd-node';
+import { UntappdClient } from 'untappd-node';
 
-const results = await searchBeers('3 fonteinen');
+const client = await new UntappdClient();
+const results = await client.searchBeers('3 fonteinen');
 ```
 
 #### getBeer
@@ -55,7 +83,9 @@ Gets information about a beer with the given ID. Returns null if no beer was fou
 Example:
 
 ```ts
-import { getBeer } from 'untappd-node';
+import { UntappdClient } from 'untappd-node';
+
+const client = await new UntappdClient();
 
 const beer = await getBeer('144709');
 if (beer !== null) {
@@ -68,11 +98,13 @@ if (beer !== null) {
 The API will throw `HTTPException` if the call to Untappd fails for any reason. This `HTTPException` includes the status code and the corresponding error message:
 
 ```ts
-import { getBeer } from 'untappd-node';
+import { UntappdClient } from 'untappd-node';
 import type { HTTPException } from 'untappd-node';
 
+const client = new UntappdClient();
+
 try {
-  const beer = await getBeer('1234');
+  const beer = await client.getBeer('1234');
   // ...
 } catch (error) {
   if (error instanceof HTTPException) {
