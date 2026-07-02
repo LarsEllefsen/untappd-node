@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.3.0
+
+### Changed
+
+- Changed beer search so that it queries Algolia directly instead of parsing the DOM.
+
+### Removed
+
+- Removed Puppeteer headless browser.
+
 ## 1.2.0
 
 ### Added
