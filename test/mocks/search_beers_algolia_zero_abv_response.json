@@ -1,0 +1,13 @@
+{
+  "hits": [
+    {
+      "bid": 5860,
+      "beer_name": "Heineken 0.0",
+      "beer_abv": 0,
+      "brewery_name": "Heineken",
+      "type_name": "Lager - Non-Alcoholic",
+      "beer_slug": "heineken-heineken-0-0",
+      "rating_score": 3.1
+    }
+  ]
+}

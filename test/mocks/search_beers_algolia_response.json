@@ -1,0 +1,49 @@
+{
+  "hits": [
+    {
+      "bid": 4009,
+      "beer_name": "Oude Geuze",
+      "beer_abv": 6,
+      "brewery_name": "Brouwerij 3 Fonteinen",
+      "type_name": "Lambic - Gueuze",
+      "beer_slug": "brouwerij-3-fonteinen-3-fonteinen-oude-geuze",
+      "rating_score": 4.062
+    },
+    {
+      "bid": 14597,
+      "beer_name": "Oude Kriek",
+      "beer_abv": 6,
+      "brewery_name": "Brouwerij 3 Fonteinen",
+      "type_name": "Lambic - Kriek",
+      "beer_slug": "brouwerij-3-fonteinen-3-fonteinen-oude-kriek",
+      "rating_score": 4.185
+    },
+    {
+      "bid": 1594814,
+      "beer_name": "Oude Geuze Cuvée Armand & Gaston",
+      "beer_abv": 5.5,
+      "brewery_name": "Brouwerij 3 Fonteinen",
+      "type_name": "Lambic - Gueuze",
+      "beer_slug": "brouwerij-3-fonteinen-3-fonteinen-oude-geuze-cuvee-armand-and-gaston",
+      "rating_score": 4.32
+    },
+    {
+      "bid": 347907,
+      "beer_name": "Intens Rood (Intense Red)",
+      "beer_abv": 6,
+      "brewery_name": "Brouwerij 3 Fonteinen",
+      "type_name": "Lambic - Kriek",
+      "beer_slug": "brouwerij-3-fonteinen-3-fonteinen-intens-rood-intense-red",
+      "rating_score": 4.203
+    },
+    {
+      "bid": 144709,
+      "beer_name": "Oude Geuze Golden Blend",
+      "beer_abv": 7.5,
+      "brewery_name": "Brouwerij 3 Fonteinen",
+      "type_name": "Lambic - Gueuze",
+      "beer_slug": "brouwerij-3-fonteinen-3-fonteinen-oude-geuze-golden-blend",
+      "rating_score": 4.364
+    }
+  ]
+}

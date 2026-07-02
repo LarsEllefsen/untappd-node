@@ -1,11 +1,13 @@
 import { enableFetchMocks } from 'jest-fetch-mock';
 import { getMockFile } from './utils';
 import { UntappdClient } from '../src';
+import { clearCachedAlgoliaConfig } from '../src/api/searchBeers/algoliaConfigCache';
 enableFetchMocks();
 
 describe('UntappdClient', () => {
   beforeEach(() => {
     fetchMock.resetMocks();
+    clearCachedAlgoliaConfig();
   });
 
   it('should return a beer', async () => {
@@ -59,13 +61,16 @@ describe('UntappdClient', () => {
   });
 
   it('should search for a product', async () => {
-    fetchMock.mockResponse(getMockFile('search_beers_response'));
+    fetchMock.mockResponses(
+      getMockFile('search_beers_response'),
+      getMockFile('search_beers_algolia_response', 'json'),
+    );
 
     const untappdClient = new UntappdClient();
     const items = await untappdClient.searchBeers('3 fonteinen');
 
     expect(items).toHaveLength(5);
-    expect(items[0].name).toBe('3 Fonteinen Oude Geuze');
+    expect(items[0].name).toBe('Oude Geuze');
     expect(items[0].brewery).toBe('Brouwerij 3 Fonteinen');
     expect(items[0].style).toBe('Lambic - Gueuze');
     expect(items[0].abv).toEqual(6);
@@ -76,7 +81,10 @@ describe('UntappdClient', () => {
   });
 
   it('should search for a product with base url overridden by config', async () => {
-    fetchMock.mockResponse(getMockFile('search_beers_response'));
+    fetchMock.mockResponses(
+      getMockFile('search_beers_response'),
+      getMockFile('search_beers_algolia_response', 'json'),
+    );
 
     const untappdClient = new UntappdClient({
       baseUrl: 'http://overridden-url',
@@ -84,7 +92,7 @@ describe('UntappdClient', () => {
     const items = await untappdClient.searchBeers('3 fonteinen');
 
     expect(items).toHaveLength(5);
-    expect(items[0].name).toBe('3 Fonteinen Oude Geuze');
+    expect(items[0].name).toBe('Oude Geuze');
     expect(items[0].brewery).toBe('Brouwerij 3 Fonteinen');
     expect(items[0].style).toBe('Lambic - Gueuze');
     expect(items[0].abv).toEqual(6);
